@@ -19,4 +19,9 @@
         <item name="android:textColorHint">@android:color/darker_gray</item>
     </style>
 
+    <style name="CircleImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item> <!-- Ensures it's a circle -->
+    </style>
+
 </resources>
