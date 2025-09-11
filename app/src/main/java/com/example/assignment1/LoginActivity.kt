@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.content.Intent
 import android.widget.Button
+import android.widget.EditText
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +25,18 @@ class LoginActivity : AppCompatActivity() {
         btnSignUp.setOnClickListener {
             val intentSignup = Intent(this, signup::class.java)
             startActivity(intentSignup)
+        }
+
+
+
+        val btnLogin = findViewById<Button>(R.id.btnLogin2)
+
+        btnLogin.setOnClickListener {
+            val usernameEditText: EditText = findViewById(R.id.emailTextBox)
+            val username = usernameEditText.text.toString().trim()
+            val intentLogin = Intent(this, login2::class.java)
+            intentLogin.putExtra("USERNAME_KEY", username)
+            startActivity(intentLogin)
         }
 
 
