@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".HomeScreen">
+
+    <ImageView
+        android:id="@+id/group_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/status_bar"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/group_1"
+        android:layout_margin="15dp">
+
+        <ImageView
+            android:id="@+id/cameraLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:src="@drawable/camerabrown"/>
+
+        <TextView
+            android:id="@+id/Logo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="Socially"
+            android:textColor="@color/brown"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <ImageButton
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/share_icon"
+            android:layout_marginTop="14dp"/>
+
+        <ImageButton
+            android:id="@+id/notificationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintRight_toLeftOf="@id/shareButton"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/notification_icon"/>
+
+
+        <HorizontalScrollView
+            android:id="@+id/storyScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@id/cameraLogo">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/story1"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/circlestory"
+                    android:layout_marginEnd="15dp"/>
+
+                <ImageButton
+                    android:id="@+id/story2"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/circlestory"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_marginEnd="15dp"/>
+
+                <ImageButton
+                    android:id="@+id/story3"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/circlestory"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_marginEnd="15dp"/>
+
+                <ImageButton
+                    android:id="@+id/story4"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/circlestory"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_marginEnd="15dp"/>
+
+                <ImageButton
+                    android:id="@+id/story5"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/circlestory"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_marginEnd="15dp"/>
+
+                <ImageButton
+                    android:id="@+id/story6"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/circlestory"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_marginEnd="15dp"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

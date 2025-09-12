@@ -46,5 +46,13 @@ class login2 : AppCompatActivity() {
             val profileImageView = findViewById<ImageView>(R.id.profileImage)
             profileImageView.setImageURI(imageUri)  // Display the received image
         }
+
+        val btnLogin3 = findViewById<Button>(R.id.btnLogin)
+
+        btnLogin3.setOnClickListener {
+            val intentHome = Intent(this, HomeScreen::class.java)
+            startActivity(intentHome)
+        }
     }
+
 }
