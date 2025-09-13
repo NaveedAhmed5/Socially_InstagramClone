@@ -7,7 +7,17 @@
     android:layout_height="match_parent"
     android:background="@color/red_brown"
     tools:context=".call">
-    
+
+    <ImageView
+        android:id="@+id/group_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/status_bar"/>
+
     <ImageView
         android:id="@+id/image"
         android:layout_width="180dp"
@@ -17,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:background="@drawable/rounded_button_more_more"
-        android:src="@drawable/danny_rob"
+        android:src="@drawable/omar_sheikh"
         android:scaleType="fitXY"
         android:clipToOutline="true">
     </ImageView>
@@ -29,7 +39,7 @@
         app:layout_constraintTop_toBottomOf="@id/image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Danny 🙂"
+        android:text="Omar 🙂"
         android:textSize="35dp"
         android:textColor="@color/white"
         android:textStyle="bold"

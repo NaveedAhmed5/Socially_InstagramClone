@@ -36,7 +36,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:clipToOutline="true"
-                    android:src="@drawable/danny_rob"
+                    android:src="@drawable/omar_sheikh"
                     android:background="@drawable/circle"
                     android:scaleType="centerCrop"/>
 
@@ -66,7 +66,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center_vertical"
-                android:src="@drawable/camera"
+                android:src="@drawable/call"
                 android:layout_marginRight="8dp"
                 android:contentDescription="Video Icon"
                 android:scaleType="fitXY"
@@ -167,7 +167,8 @@
         android:text="Hello"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:padding="12dp"
+        android:gravity="center"
+        android:paddingHorizontal="28dp"
         android:backgroundTint="@color/brown"
         android:layout_margin="18dp"/>
 

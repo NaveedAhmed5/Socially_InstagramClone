@@ -36,7 +36,7 @@ class messageList : AppCompatActivity() {
         val personName = chatPersonName.text.toString().trim()
 
 
-        val chatBtn = findViewById<LinearLayout>(R.id.DannyChat)
+        val chatBtn = findViewById<LinearLayout>(R.id.chat2)
         chatBtn.setOnClickListener {
             val intentChat = Intent(this, chat::class.java)
             intentChat.putExtra("PersonName", personName)
