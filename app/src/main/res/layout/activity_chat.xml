@@ -61,14 +61,15 @@
                 android:layout_weight="1" />
 
             <!-- Video Icon Section -->
-            <ImageView
-                android:id="@+id/video_icon"
+            <ImageButton
+                android:id="@+id/callBtn"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center_vertical"
                 android:src="@drawable/camera"
                 android:layout_marginRight="8dp"
                 android:contentDescription="Video Icon"
+                android:scaleType="fitXY"
                 android:background="@color/transparent"/>
 
             <!-- Info Icon Section -->

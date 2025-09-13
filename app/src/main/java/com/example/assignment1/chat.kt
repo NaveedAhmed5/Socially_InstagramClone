@@ -1,11 +1,13 @@
 package com.example.assignment1
 
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.content.Intent
 
 class chat : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +25,10 @@ class chat : AppCompatActivity() {
         val personNameTextView = findViewById<TextView>(R.id.personNameTextView)
         personNameTextView.text = personName
 
-        val intentCall =
+        val callBtn = findViewById<ImageButton>(R.id.callBtn)
+        callBtn.setOnClickListener {
+            val intentCall = Intent(this, call::class.java)
+            startActivity(intentCall)
+        }
     }
 }
