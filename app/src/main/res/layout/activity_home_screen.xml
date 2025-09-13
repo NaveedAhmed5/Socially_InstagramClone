@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
+        android:layout_marginBottom="70dp"
         xmlns:android="http://schemas.android.com/apk/res/android">
 
         <!-- Main container using ConstraintLayout -->
@@ -502,7 +503,9 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
     <!-- Bottom Navigation Bar, Always fixed at the bottom -->
+    <!-- Bottom Navigation Bar, Always fixed at the bottom -->
     <LinearLayout
+        android:id="@+id/navigation_bar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:src="@drawable/feed"
@@ -518,7 +521,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:src="@drawable/tab_1"
+            android:src="@drawable/tab_1_filled"
             android:background="@color/white"/>
         <ImageButton
             android:id="@+id/tab_2_search"

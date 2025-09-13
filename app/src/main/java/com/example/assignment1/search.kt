@@ -31,5 +31,13 @@ class search : AppCompatActivity() {
             val imageView = findViewById<ImageView>(R.id.tab_5)
             imageView.setImageURI(imageUri) // Set the image URI to the ImageView
         }
+
+        val homeBtn = findViewById<ImageButton>(R.id.tab_1)
+
+        homeBtn.setOnClickListener {
+            val intentHome = Intent(this, HomeScreen::class.java)
+            startActivity(intentHome)
+            overridePendingTransition(0, 0)
+        }
     }
 }

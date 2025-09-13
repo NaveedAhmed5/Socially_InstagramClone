@@ -2,57 +2,62 @@ package com.example.assignment1
 
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.content.Intent
-import android.widget.ImageButton
-import android.widget.TextView
-
 
 class HomeScreen : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+
         setContentView(R.layout.activity_home_screen)
+
+        // Set padding for the main layout based on system bars (status bar, navigation bar)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        // Retrieve the profile image URI from the intent
         val imageUriString = intent.getStringExtra("PROFILE_IMAGE_URI")
         val profileImageView = findViewById<ImageView>(R.id.profileImageView)
         val profileImageInFeed = findViewById<ImageButton>(R.id.tab_5)
-        // Set the image URI to the ImageView
-        if (imageUriString!=null) {
-            val imageUri = Uri.parse(imageUriString)
+
+        // Set the profile image to both ImageViews if URI is provided
+        imageUriString?.let {
+            val imageUri = Uri.parse(it)
             profileImageView.setImageURI(imageUri)
             profileImageInFeed.setImageURI(imageUri)
         }
 
+        // Retrieve and set the username to the TextView
         val username = intent.getStringExtra("USERNAME_KEY")
-        val usernameTextView = findViewById<TextView>(R.id.usernameTextView) // Make sure this ID exists
-
-        // Set the username to a TextView
+        val usernameTextView = findViewById<TextView>(R.id.usernameTextView)
         usernameTextView.text = username
 
-        val searchBtn=findViewById<ImageButton>(R.id.tab_2_search)
-
+        // Set up the Search button to open the search screen
+        val searchBtn = findViewById<ImageButton>(R.id.tab_2_search)
         searchBtn.setOnClickListener {
             val intentSearch = Intent(this, search::class.java)
-            if (imageUriString != null) {
-                val imageUri = Uri.parse(imageUriString)
-                intentSearch.putExtra("PROFILE_IMAGE_URI", imageUri.toString()) // Convert URI to String before sending
+            imageUriString?.let {
+                val imageUri = Uri.parse(it)
+                intentSearch.putExtra("PROFILE_IMAGE_URI", imageUri.toString()) // Pass URI as String
             }
             startActivity(intentSearch)
+            overridePendingTransition(0, 0)
         }
 
-        val shareBtn= findViewById<ImageButton>(R.id.shareButton)
+        // Set up the Share button to open the message list screen
+        val shareBtn = findViewById<ImageButton>(R.id.shareButton)
         shareBtn.setOnClickListener {
-            val intentShare=Intent(this, )
+            val intentShare = Intent(this, messageList::class.java)
+            startActivity(intentShare)
         }
     }
 }

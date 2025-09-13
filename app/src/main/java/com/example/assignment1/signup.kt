@@ -95,6 +95,10 @@ class signup : AppCompatActivity() {
                 intentSignup.putExtra("IMAGE_URI_KEY", it.toString())
             }
 
+            val sharedPref = getSharedPreferences("MyAppPrefs", MODE_PRIVATE)
+            sharedPref.edit().putString("USERNAME_KEY", username).apply()
+            sharedPref.edit().putString("IMAGE_URI_KEY", selectedImageUri.toString()).apply()
+
             startActivity(intentSignup)
             finish()
         }
