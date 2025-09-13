@@ -73,7 +73,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:background="@drawable/circle"
-            android:src="@drawable/camera"/>
+            android:src="@drawable/camera"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"/>
 
         <EditText
             android:id="@+id/userName1"

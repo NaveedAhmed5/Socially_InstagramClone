@@ -53,13 +53,12 @@
 
         <ImageView
             android:id="@+id/profileImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:gravity="center"
-            android:background="@color/white"
-            android:text="IMG"
-            android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:background="@drawable/circle"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"/>
 
         <TextView
             android:id="@+id/usernameTextView"

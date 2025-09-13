@@ -41,16 +41,24 @@ class login2 : AppCompatActivity() {
 
         // Receive image Uri from signup activity
         val imageUriString = intent.getStringExtra("IMAGE_URI_KEY")
-        if (imageUriString != null) {
+        val profileImageView = findViewById<ImageView>(R.id.profileImage)
+        if (imageUriString!=null) {
             val imageUri = Uri.parse(imageUriString)
-            val profileImageView = findViewById<ImageView>(R.id.profileImage)
             profileImageView.setImageURI(imageUri)  // Display the received image
         }
 
         val btnLogin3 = findViewById<Button>(R.id.btnLogin)
 
         btnLogin3.setOnClickListener {
+            val imageUri = (profileImageView.drawable as? android.graphics.drawable.BitmapDrawable)?.bitmap
+                ?.let { android.provider.MediaStore.Images.Media.insertImage(contentResolver, it, "profileImage", null) }
+
             val intentHome = Intent(this, HomeScreen::class.java)
+
+            intentHome.putExtra("PROFILE_IMAGE_URI", imageUri)
+
+            intentHome.putExtra("USERNAME_KEY", username)
+
             startActivity(intentHome)
         }
     }
