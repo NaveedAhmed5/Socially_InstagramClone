@@ -125,6 +125,8 @@
                                     android:layout_gravity="center"
                                     android:scaleType="centerCrop"
                                     android:background="@drawable/circlestory"
+                                    android:clickable="true"
+                                    android:focusable="true"
                                     android:clipToOutline="true"/>
                             </FrameLayout>
 

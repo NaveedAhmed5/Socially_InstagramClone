@@ -28,13 +28,16 @@ class HomeScreen : AppCompatActivity() {
         val imageUriString = intent.getStringExtra("PROFILE_IMAGE_URI")
         val profileImageView = findViewById<ImageView>(R.id.profileImageView)
         val profileImageInFeed = findViewById<ImageButton>(R.id.tab_5)
-
-        // Set the profile image to both ImageViews if URI is provided
-        imageUriString?.let {
-            val imageUri = Uri.parse(it)
+        if (imageUriString != null) {
+            val imageUri = Uri.parse(imageUriString)
             profileImageView.setImageURI(imageUri)
             profileImageInFeed.setImageURI(imageUri)
+        } else {
+            // 👇 show fallback placeholder
+            profileImageView.setImageResource(R.drawable.ic_default_profile)
+            profileImageInFeed.setImageResource(R.drawable.ic_default_profile)
         }
+
 
         // Retrieve and set the username to the TextView
         val username = intent.getStringExtra("USERNAME_KEY")
@@ -58,6 +61,18 @@ class HomeScreen : AppCompatActivity() {
         shareBtn.setOnClickListener {
             val intentShare = Intent(this, messageList::class.java)
             startActivity(intentShare)
+        }
+
+        val storyOwnBtn = findViewById<ImageView>(R.id.profileImageView)
+        storyOwnBtn.setOnClickListener {
+            val intentStoryOwn = Intent(this, storyViewOwn::class.java)
+            val intentSearch = Intent(this, search::class.java)
+            imageUriString?.let {
+                val imageUri = Uri.parse(it)
+                intentSearch.putExtra("PROFILE_IMAGE_URI", imageUri.toString()) // Pass URI as String
+            }
+            startActivity(intentStoryOwn)
+            overridePendingTransition(0, 0)
         }
     }
 }

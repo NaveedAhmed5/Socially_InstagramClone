@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Assignment1">
         <activity
+            android:name=".storyViewOwn"
+            android:exported="false"
+            android:launchMode="singleTop" />
+        <activity
             android:name=".call"
             android:exported="false"
             android:launchMode="singleTop" />

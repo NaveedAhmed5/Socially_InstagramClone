@@ -35,9 +35,13 @@ class search : AppCompatActivity() {
         val homeBtn = findViewById<ImageButton>(R.id.tab_1)
 
         homeBtn.setOnClickListener {
-            val intentHome = Intent(this, HomeScreen::class.java)
+            val intentHome = Intent(this, HomeScreen::class.java).apply {
+                // If HomeScreen exists in the task, move it to front; else create it
+                addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            }
             startActivity(intentHome)
             overridePendingTransition(0, 0)
+            finish()
         }
     }
 }

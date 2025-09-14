@@ -51,7 +51,7 @@ class login2 : AppCompatActivity() {
 
         btnLogin3.setOnClickListener {
             val imageUri = (profileImageView.drawable as? android.graphics.drawable.BitmapDrawable)?.bitmap
-                ?.let { android.provider.MediaStore.Images.Media.insertImage(contentResolver, it, "profileImage", null) }
+                ?.let { android.provider.MediaStore.Images.Media.insertImage(contentResolver, it, "PROFILE_IMAGE_URI", null) }
 
             val intentHome = Intent(this, HomeScreen::class.java)
 
@@ -59,7 +59,9 @@ class login2 : AppCompatActivity() {
 
             intentHome.putExtra("USERNAME_KEY", username)
 
+            intentHome.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intentHome)
+            finish()
         }
     }
 
